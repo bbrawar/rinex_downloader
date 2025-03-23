@@ -93,7 +93,7 @@ class RinexDownloader:
     def create_gui(self):
         root = tk.Tk()
         root.title("RINEX File Downloader")
-        root.geometry("500x400")
+        root.geometry("600x400")
         
         # Create main frame
         main_frame = ttk.Frame(root, padding="10")
@@ -127,7 +127,7 @@ class RinexDownloader:
         end_date_picker.grid(row=1, column=1, pady=5, sticky='w')
         
         # Prefix input
-        ttk.Label(main_frame, text="Prefixes (comma separated):").grid(row=2, column=0, pady=5)
+        ttk.Label(main_frame, text="Station Code \n(comma separated):").grid(row=2, column=0, pady=5)
         prefix_var = tk.StringVar()
         ttk.Entry(main_frame, textvariable=prefix_var).grid(row=2, column=1, pady=5, sticky='ew')
         
@@ -152,6 +152,8 @@ class RinexDownloader:
                       dir_var.get(), #progress_var, progress_label
                   )).grid(row=7, column=0, columnspan=3, pady=10)
         
+        # Note:
+        ttk.Label(main_frame, text="Note:\n 1. That station code is four characters long. \n 2. If you want to download all files, please enter 'all' in the station code field.").grid(row=8, column=0, columnspan=4, pady=5)
         # Configure grid weights
         main_frame.columnconfigure(1, weight=1)
         
