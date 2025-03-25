@@ -125,7 +125,7 @@ class RinexDownloader:
             start_date_var.get(), end_date_var.get(), prefix_var.get(), file_type_var.get(), dir_var.get()
         )).grid(row=5, column=0, columnspan=3, pady=10)
         
-        ttk.Label(main_frame, text="Note: Station code is four characters. Use 'all' to download all files.").grid(row=6, column=0, columnspan=3, pady=5)
+        ttk.Label(main_frame, text="Note: \n 1. Station code is four characters. \n 2. Use 'all' to download all files.").grid(row=6, column=0, columnspan=3, pady=5)
         
         main_frame.columnconfigure(1, weight=1)
         root.mainloop()
