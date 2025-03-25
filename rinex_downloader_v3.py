@@ -63,7 +63,7 @@ class RinexDownloader:
         return file_links
 
     def download_file(self, file_url):
-        file_name = file_url.split('/')[-3:]
+        file_name = file_url.split('/')[-4:]
         file_path = os.path.join(self.download_dir, *file_name)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         
