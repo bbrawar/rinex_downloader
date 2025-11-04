@@ -48,7 +48,7 @@ class RinexDownloader:
                     
                     for link in soup.find_all('a', href=True):
                         href = link['href']
-                        if prefixes == ['all'] or any(href.lower().startswith(prefix.lower()) for prefix in prefixes):
+                        if prefixes == ['all'] or any(href.lower().startswith(prefix.strip().lower()) for prefix in prefixes):
                             file_links.append(url + href)
                 
                 except requests.RequestException as e:
